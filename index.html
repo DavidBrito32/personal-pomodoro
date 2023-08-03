@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Davi Brito">
+  <meta name="description" content="Desenvolvedor Davi Brito">
+  <meta name="keywords" content="sites, web, desenvolvimento">
+  <link rel="shortcut icon" href="images/logo/icons8-relógio-32.svg" type="image/x-icon">
+  <!--Imports-->
+
+
+  <!--FIM Imports-->
+  <link rel="stylesheet" href="modulo scss/style.css">
+  <title>Cronometro Pomodoro</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo/icons8-relógio-256.svg" alt="">
+    </div>
+
+    <nav>
+      <div id="hamburguer" class="burguer">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul id="menu">
+        <li><a href="#">Início</a></li>
+        <li><a onclick="fecharTudo()" id="settings" href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="capsula-botoes">
+      <button id="pom">Pomodoro</button>
+      <button id="pausee">Short Break</button>
+      <button id="longdescanse">Long Break</button>
+    </div>
+
+    <div class="container">
+      <div class="progresso">
+        <div id="barraDeProgresso" class="progresso-interno"></div>
+      </div>
+        <div class="relogio">
+          <span id="hora">00</span>:
+          <span id="minutos">00</span>:
+          <span id="segundos">00</span>
+        </div>
+        <div class="controle">
+          <button onclick="iniciaPomodoro()" id="iniciar">Iniciar</button>
+          <button onclick="pausaPomodoro()" id="pausar">Pausar</button>
+          <button onclick="continuaPomodoro()" id="continuar">Continuar</button>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div id="configs" class="configs">
+      <form>
+        <span id="fecharConfigs">X</span>
+        <h1>Faça os ajustes para iniciar seu Pomodoro</h1>
+        <label for="tempo-total">Quanto tempo você precisa focar hoje?</label>
+        <input type="number" name="tempo-total" id="tempo-total" min="1" max="4" placeholder="Tempo em horas">
+        <label for="tempo-parcial">Tempo em minutos</label>
+        <input type="number" name="tempo-parcial" id="tempo-parcial" min="5" max="30" placeholder="Defina quantos minutos">
+        <label for="tempo-pausa">Tempo de Pausa</label>
+        <input type="number" name="tempo-pausa" id="tempo-pausa" min="5" max="30" value="5">
+        <button onclick="ajustePomodoro(event)" id="iniciaPomodoro" type="submit">Salvar</button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer></footer>
+
+  <script src="script/index.js"></script>
+  <!--JAVASCRIPT-->
+</body>
+</html>

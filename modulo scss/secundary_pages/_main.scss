@@ -1,0 +1,263 @@
+main{
+    width: 100vw;
+    height: calc(100vh - 12vh);
+    background: linear-gradient(45deg, #0f037b, #4e1152, #380c28);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+            .capsula-botoes{
+                width: 400px;
+                height: 80px;
+                border-radius: 100px;
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                    button{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: calc(100% / 3);
+                        height: 100%;
+                        border: none;
+                        background-color: transparent;
+                        color: white;
+                        font-weight: bolder;
+                        font-size: 1.2rem;
+                        border-radius: 12px;
+                        text-align: center;
+                        cursor: pointer;
+                        transition-duration: 400ms;
+
+                            &:hover, &.active{
+                                background-color: rgb(168, 48, 68);
+                            }
+                    }
+            }
+
+            .container{
+                width: 500px;
+                height: 500px;
+                border-radius: 50%;
+                background-color: #161616a2;
+                backdrop-filter: blur(20px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+
+
+                    .progresso{
+                        width: 350px;
+                        height: 50px;
+                        border: 3px outset rgb(155, 114, 0);
+                        position: absolute;
+                        top: 25%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 12px;
+                        // transition-duration: 1s;
+
+                            .progresso-interno{
+                                transition-duration: 400ms;
+                                width: 0%;
+                                height: 100%;
+                                background: linear-gradient(30deg, red, pink, black);
+
+                            }
+                    }
+
+                    .relogio{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 400px;
+                        height: 100px;
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 5rem;
+                        color: #FFFFFF;
+
+                                span{
+                                    font-size: 5rem;
+                                    color: #FFFFFF;
+                                }
+                    }
+                    
+                    .controle{
+                        width: 70%;
+                        height: 130px;
+                        position: absolute;
+                        bottom: 10%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 10px;
+
+                                
+                    button{
+                        width: 150px;
+                        border-radius: 12px;
+                        height: 50px;
+                        border: none;
+                        font-size: 1rem;
+                        background-color: #0a0257;
+                        color: #ffffff;
+                        bottom: 30%;
+                        cursor: pointer;
+                        transition-duration: 100ms;
+
+                            &:hover{
+                                background-color: #38540c;
+                            }
+
+                            &:active{
+                                transform: scale(0.97);
+                                border: 1px solid #891657;
+                                color: rgb(0, 229, 255);
+                            }
+
+                    }
+                    }
+                    
+            }
+
+            .overlay{
+                top: 12vh;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                background-color: $puddin-main-transparent;
+                visibility: hidden;
+                opacity: 0;
+                transition-duration: 400ms;
+                pointer-events: none;
+
+                        &.active{
+                            visibility: visible;
+                            opacity: 1;
+                            pointer-events: all;
+                            cursor: pointer;
+                        }
+            }
+
+            .configs{
+                position: fixed;
+                width: 450px;
+                height: 550px;
+                border-radius: 24px;
+                box-shadow: 3px 5px 40px 5px $puddin-main-transparent-configs-box-shadow;
+                background-color: $puddin-main-transparent-configs;
+                backdrop-filter: (blur(5px));
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition-duration: 600ms;
+                visibility: hidden;
+                opacity: 0;
+                z-index: 10000;
+
+                    &.active{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+
+
+                    h1{
+                        margin: 0 auto;
+                        width: 70%;
+                        font-size: 1.3rem;
+                        color: #8cab03;
+                        text-align: center;
+                    }
+
+                    form{
+                        width: 90%;
+                        height: 90%;
+                        border: 3px solid $puddin-main-transparent-configs-border;
+                        border-radius: 8px;
+                        padding: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        position: relative;
+                        #fecharConfigs{
+                            display: block;
+                            position: absolute;
+                            font-size: 1.5rem;
+                            width: 35px;
+                            height: 35px;
+                            border-radius: 50%;
+                            background-color: white;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            right: 10px;
+                            top: 10px;
+                            cursor: pointer;
+
+                                &:hover{
+                                    background-color: #0c008b;
+                                    color: white;
+                                }
+                        }
+
+                            label{
+                                font-size: 1.3rem;
+                                color: white;
+                                font-weight: 600;
+                            }
+
+                            input{
+                                display: block;
+                                width: 150px;
+                                height: 40px;
+                                border: none;
+                                outline: none;
+                                border-radius: 12px;
+                                padding-left: 20px;
+                                background-color: $puddin-main-transparent-configs-input-bg;
+                                font-size: 0.8rem;
+                                color: #ffffff;
+                                font-weight: bold;
+                            }
+
+                            button{
+                                width: 100%;
+                                height: 50px;
+                                border: none;
+                                outline: none;
+                                border-radius: 12px;
+                                cursor: pointer;
+                                background-color: green;
+                                color: white;
+                                font-weight: bold;
+                                font-size: 1.5rem;
+                                transition-duration: 200ms;
+
+                                    &:hover{
+                                        background-color: #006cbe;
+                                        color: yellow;
+                                    }
+
+                                    &:active{
+                                        transform: scale(0.97);
+                                        color: red;
+                                    }
+                            }
+                    }
+            }
+}

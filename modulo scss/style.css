@@ -1,0 +1,573 @@
+/***************VARIAVEIS DE CORES**************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-size: 1rem;
+  font-family: Helvetica;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  background-color: #b3b5cb;
+}
+
+header {
+  width: 100vw;
+  height: 12vh;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #297ba1;
+  box-shadow: 0px 1px 30px rgba(217, 255, 1, 0.4235294118);
+  position: relative;
+}
+header .logo {
+  width: 10%;
+  height: 100%;
+}
+header .logo img {
+  width: 90%;
+  height: 90%;
+}
+header nav {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav .burguer {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  visibility: hidden;
+  opacity: 0;
+}
+header nav .burguer .bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 12px;
+  background-color: #420035;
+}
+header nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+header nav ul a {
+  color: #f6ff00;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+header nav ul a:hover {
+  color: #9ca025;
+}
+
+main {
+  width: 100vw;
+  height: 88vh;
+  background: linear-gradient(45deg, #0f037b, #4e1152, #380c28);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+main .capsula-botoes {
+  width: 400px;
+  height: 80px;
+  border-radius: 100px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .capsula-botoes button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3333333333%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 400ms;
+}
+main .capsula-botoes button:hover, main .capsula-botoes button.active {
+  background-color: rgb(168, 48, 68);
+}
+main .container {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: rgba(22, 22, 22, 0.6352941176);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+main .container .progresso {
+  width: 350px;
+  height: 50px;
+  border: 3px outset rgb(155, 114, 0);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+}
+main .container .progresso .progresso-interno {
+  transition-duration: 400ms;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(30deg, red, pink, black);
+}
+main .container .relogio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: #FFFFFF;
+}
+main .container .relogio span {
+  font-size: 5rem;
+  color: #FFFFFF;
+}
+main .container .controle {
+  width: 70%;
+  height: 130px;
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+main .container .controle button {
+  width: 150px;
+  border-radius: 12px;
+  height: 50px;
+  border: none;
+  font-size: 1rem;
+  background-color: #0a0257;
+  color: #ffffff;
+  bottom: 30%;
+  cursor: pointer;
+  transition-duration: 100ms;
+}
+main .container .controle button:hover {
+  background-color: #38540c;
+}
+main .container .controle button:active {
+  transform: scale(0.97);
+  border: 1px solid #891657;
+  color: rgb(0, 229, 255);
+}
+main .overlay {
+  top: 12vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4392156863);
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 400ms;
+  pointer-events: none;
+}
+main .overlay.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  cursor: pointer;
+}
+main .configs {
+  position: fixed;
+  width: 450px;
+  height: 550px;
+  border-radius: 24px;
+  box-shadow: 3px 5px 40px 5px rgba(255, 255, 255, 0.2588235294);
+  background-color: rgba(174, 69, 69, 0.2196078431);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 600ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10000;
+}
+main .configs.active {
+  visibility: visible;
+  opacity: 1;
+}
+main .configs h1 {
+  margin: 0 auto;
+  width: 70%;
+  font-size: 1.3rem;
+  color: #8cab03;
+  text-align: center;
+}
+main .configs form {
+  width: 90%;
+  height: 90%;
+  border: 3px solid rgb(188, 142, 3);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+main .configs form #fecharConfigs {
+  display: block;
+  position: absolute;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+main .configs form #fecharConfigs:hover {
+  background-color: #0c008b;
+  color: white;
+}
+main .configs form label {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 600;
+}
+main .configs form input {
+  display: block;
+  width: 150px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding-left: 20px;
+  background-color: #705602;
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+main .configs form button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition-duration: 200ms;
+}
+main .configs form button:hover {
+  background-color: #006cbe;
+  color: yellow;
+}
+main .configs form button:active {
+  transform: scale(0.97);
+  color: red;
+}
+
+/* RESPONSIVIDADE GERAL SIMPLIFICADA  */
+@media only screen and (max-device-width: 480px) {
+  /* celulares  */
+  header {
+    width: 100%;
+    position: relative;
+  }
+  header nav .burguer {
+    width: 35px;
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+    right: 20px;
+  }
+  header nav ul {
+    background-color: rgba(43, 43, 56, 0.6431372549);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 12vh;
+    flex-direction: column;
+    z-index: 1000;
+    visibility: hidden;
+    overflow: hidden;
+    transition-duration: 600ms;
+    opacity: 0;
+  }
+  header nav ul.active {
+    height: 30%;
+    visibility: visible;
+    opacity: 1;
+  }
+  main {
+    width: 100%;
+  }
+  main .capsula-botoes {
+    width: 90%;
+  }
+  main .capsula-botoes button {
+    font-size: 0.8rem;
+  }
+  main .container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(22, 22, 22, 0.6352941176);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  main .container .progresso {
+    width: 200px;
+    height: 50px;
+    border: 3px outset rgb(155, 114, 0);
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+  }
+  main .container .progresso .progresso-interno {
+    transition-duration: 400ms;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(30deg, red, pink, black);
+  }
+  main .container .relogio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: #FFFFFF;
+  }
+  main .container .relogio span {
+    font-size: 3rem;
+    color: #FFFFFF;
+  }
+  main .container .controle {
+    width: 70%;
+    height: 130px;
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  main .container .controle button {
+    width: 50px;
+    border-radius: 12px;
+    height: 50px;
+    border: none;
+    font-size: 0.7rem;
+    background-color: #0a0257;
+    color: #ffffff;
+    bottom: 30%;
+    cursor: pointer;
+    transition-duration: 100ms;
+  }
+  main .container .controle button:hover {
+    background-color: #38540c;
+  }
+  main .container .controle button:active {
+    transform: scale(0.97);
+    border: 1px solid #891657;
+    color: rgb(0, 229, 255);
+  }
+  main .configs {
+    width: 100%;
+  }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 900px) {
+  /* tablets */
+  header {
+    width: 100%;
+    position: relative;
+  }
+  header nav .burguer {
+    width: 35px;
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+    right: 20px;
+  }
+  header nav ul {
+    background-color: rgba(43, 43, 56, 0.6431372549);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 12vh;
+    flex-direction: column;
+    z-index: 1000;
+    visibility: hidden;
+    overflow: hidden;
+    transition-duration: 600ms;
+    opacity: 0;
+  }
+  header nav ul.active {
+    height: 30%;
+    visibility: visible;
+    opacity: 1;
+  }
+  main {
+    width: 100%;
+  }
+  main .capsula-botoes {
+    width: 80%;
+  }
+  main .container {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: rgba(22, 22, 22, 0.6352941176);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  main .container .progresso {
+    width: 300px;
+    height: 50px;
+    border: 3px outset rgb(155, 114, 0);
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+  }
+  main .container .progresso .progresso-interno {
+    transition-duration: 400ms;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(30deg, red, pink, black);
+  }
+  main .container .relogio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: #FFFFFF;
+  }
+  main .container .relogio span {
+    font-size: 5rem;
+    color: #FFFFFF;
+  }
+  main .container .controle {
+    width: 70%;
+    height: 130px;
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  main .container .controle button {
+    width: 150px;
+    border-radius: 12px;
+    height: 50px;
+    border: none;
+    font-size: 1rem;
+    background-color: #0a0257;
+    color: #ffffff;
+    bottom: 30%;
+    cursor: pointer;
+    transition-duration: 100ms;
+  }
+  main .container .controle button:hover {
+    background-color: #38540c;
+  }
+  main .container .controle button:active {
+    transform: scale(0.97);
+    border: 1px solid #891657;
+    color: rgb(0, 229, 255);
+  }
+}
+@media only screen and (min-device-width: 901px) and (max-device-width: 1200px) {
+  /* notebooks e desktops */
+  main {
+    width: 100%;
+  }
+}
+@media only screen and (min-device-width: 1201px) {
+  /* telas maiores */
+  main {
+    width: 100%;
+    height: 88vh;
+  }
+}
+/* ********************************************************************************* *//*# sourceMappingURL=style.css.map */

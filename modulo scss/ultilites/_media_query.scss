@@ -1,0 +1,308 @@
+/* RESPONSIVIDADE GERAL SIMPLIFICADA  */
+
+@media only screen and (max-device-width: 480px){
+    /* celulares  */
+    header{
+        width: 100%;
+        position: relative;
+
+        nav{
+            .burguer{
+                width: 35px;
+                visibility: visible;
+                opacity: 1;
+                cursor: pointer;
+                right: 20px;
+            }
+
+            ul{
+                background-color: #2b2b38a4;
+                backdrop-filter: blur(5px);
+                height: 0%;
+                width: 100%;
+                position: fixed;
+                right: 0;
+                top: 12vh;
+                flex-direction: column;
+                z-index: 1000;
+                visibility: hidden;
+                overflow: hidden;
+                transition-duration: 600ms;
+                opacity: 0;
+
+                    &.active{
+                        height: 30%;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+            }
+        }
+    }
+
+    main{
+        width: 100%;
+
+            .capsula-botoes{
+                width: 90%;
+
+                    button{
+                        font-size: 0.8rem;
+                    }
+            }
+
+            .container{
+                width:300px;
+                height:300px;
+                border-radius: 50%;
+                background-color: #161616a2;
+                backdrop-filter: blur(20px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+
+
+                    .progresso{
+                        width: 200px;
+                        height: 50px;
+                        border: 3px outset rgb(155, 114, 0);
+                        position: absolute;
+                        top: 25%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 12px;
+                        // transition-duration: 1s;
+
+                            .progresso-interno{
+                                transition-duration: 400ms;
+                                width: 0%;
+                                height: 100%;
+                                background: linear-gradient(30deg, red, pink, black);
+
+                            }
+                    }
+
+                    .relogio{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 200px;
+                        height: 100px;
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 1rem;
+                        color: #FFFFFF;
+
+                                span{
+                                    font-size: 3rem;
+                                    color: #FFFFFF;
+                                }
+                    }
+                    
+                    .controle{
+                        width: 70%;
+                        height: 130px;
+                        position: absolute;
+                        bottom: 10%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 10px;
+
+                                
+                    button{
+                        width: 50px;
+                        border-radius: 12px;
+                        height: 50px;
+                        border: none;
+                        font-size: 0.7rem;
+                        background-color: #0a0257;
+                        color: #ffffff;
+                        bottom: 30%;
+                        cursor: pointer;
+                        transition-duration: 100ms;
+
+                            &:hover{
+                                background-color: #38540c;
+                            }
+
+                            &:active{
+                                transform: scale(0.97);
+                                border: 1px solid #891657;
+                                color: rgb(0, 229, 255);
+                            }
+
+                    }
+                    }
+                    
+            }
+
+            .configs{
+                width: 100%;
+            }
+    }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 900px){
+    /* tablets */
+
+    header{
+        width: 100%;
+        position: relative;
+
+        nav{
+            .burguer{
+                width: 35px;
+                visibility: visible;
+                opacity: 1;
+                cursor: pointer;
+                right: 20px;
+            }
+
+            ul{
+                background-color: #2b2b38a4;
+                backdrop-filter: blur(5px);
+                height: 0%;
+                width: 100%;
+                position: fixed;
+                right: 0;
+                top: 12vh;
+                flex-direction: column;
+                z-index: 1000;
+                visibility: hidden;
+                overflow: hidden;
+                transition-duration: 600ms;
+                opacity: 0;
+
+                    &.active{
+                        height: 30%;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+            }
+        }
+    }
+
+    main{
+        width: 100%;
+
+            .capsula-botoes{
+                width: 80%;
+            }
+
+            .container{
+                width:450px;
+                height:450px;
+                border-radius: 50%;
+                background-color: #161616a2;
+                backdrop-filter: blur(20px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+
+
+                    .progresso{
+                        width: 300px;
+                        height: 50px;
+                        border: 3px outset rgb(155, 114, 0);
+                        position: absolute;
+                        top: 25%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 12px;
+                        // transition-duration: 1s;
+
+                            .progresso-interno{
+                                transition-duration: 400ms;
+                                width: 0%;
+                                height: 100%;
+                                background: linear-gradient(30deg, red, pink, black);
+
+                            }
+                    }
+
+                    .relogio{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 300px;
+                        height: 100px;
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 5rem;
+                        color: #FFFFFF;
+
+                                span{
+                                    font-size: 5rem;
+                                    color: #FFFFFF;
+                                }
+                    }
+                    
+                    .controle{
+                        width: 70%;
+                        height: 130px;
+                        position: absolute;
+                        bottom: 10%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 10px;
+
+                                
+                    button{
+                        width: 150px;
+                        border-radius: 12px;
+                        height: 50px;
+                        border: none;
+                        font-size: 1rem;
+                        background-color: #0a0257;
+                        color: #ffffff;
+                        bottom: 30%;
+                        cursor: pointer;
+                        transition-duration: 100ms;
+
+                            &:hover{
+                                background-color: #38540c;
+                            }
+
+                            &:active{
+                                transform: scale(0.97);
+                                border: 1px solid #891657;
+                                color: rgb(0, 229, 255);
+                            }
+
+                    }
+                    }
+                    
+            }
+    }
+}
+
+@media only screen and (min-device-width: 901px) and (max-device-width: 1200px) {
+    /* notebooks e desktops */
+
+    main{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-device-width: 1201px){
+    /* telas maiores */
+    main{
+        width: 100%;
+        height: calc(100vh - 12vh);
+    }
+}
+
+/* ********************************************************************************* */

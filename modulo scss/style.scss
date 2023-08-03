@@ -1,0 +1,26 @@
+@import "ultilites/color_palette";//***************//
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-size: 1rem;
+  font-family: Helvetica;
+  overflow-x: hidden;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  position: relative;
+  background-color: $puddin-body-background-light-mode;
+}
+
+//********///ESPACO DE IMPORTS///*****************//
+@import "secundary_pages/header"; //*********//
+@import "secundary_pages/main"; //**********//
+@import "secundary_pages/footer"; //*******//
+@import "ultilites/media_query";//**//
+//******************************************//
+
